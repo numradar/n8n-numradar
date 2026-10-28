@@ -1,0 +1,70 @@
+{
+  "name": "n8n-nodes-numradar",
+  "version": "0.1.1",
+  "description": "n8n community node for NumRadar: validate WhatsApp numbers, create and poll bulk jobs.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "numradar",
+    "whatsapp",
+    "phone",
+    "validation"
+  ],
+  "license": "MIT",
+  "homepage": "https://numradar.app/docs#n8n",
+  "author": {
+    "name": "NumRadar",
+    "email": "code@numradar.app",
+    "url": "https://numradar.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numradar/n8n-numradar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/numradar/n8n-numradar/issues",
+    "email": "support@numradar.app"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run lint && npm test && npm run build"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/NumRadarApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/NumRadar/NumRadar.node.js"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.54.4",
+    "@types/node": "^20.14.0",
+    "eslint": "9.39.4",
+    "n8n-workflow": "2.39.0",
+    "prettier": "3.8.3",
+    "typescript": "5.9.3",
+    "vitest": "^2.0.0"
+  }
+}
